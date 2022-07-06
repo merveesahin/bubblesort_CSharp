@@ -12,9 +12,9 @@ namespace bubbleSrt
             foreach (int item in a)
             Console.Write(item + " ");
 
-                for (int i = 0; i <= a.Length-2 ; i++)
+                for (int i = 0; i < a.Length-1; i++)
                 {
-                    for (int j = 0; j <= a.Length-2 ; j++)
+                    for (int j = 0; j < a.Length-i-1 ; j++) //önceye dönmesin diye -i ve boundof hatası almamak için -1
                     {
                         if (a[j] > a[j + 1])
                         {
@@ -22,13 +22,14 @@ namespace bubbleSrt
                             a[j + 1] = a[j];
                             a[j] = t;
 
-                        }
+                        } //scop alanı={} //pointer referans vermek için kullanılır..
+
                     }
                 }
                 Console.WriteLine("\n" + "sıralı:");
-                foreach (var item in a)
+                for (int b = 0; b < a.Length - 1; b++)
                 {
-                    Console.Write(item + " ");
+                    Console.Write(a[b] + " ");
                 }
         }
     }
